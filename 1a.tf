@@ -117,7 +117,7 @@ resource "aws_route_table" "Public" {
 # resource "aws_route_table" "Private" {
 #   vpc_id = aws_vpc.Star.id
 #   route {
-#     cidr_block = aws_vpc.Star.cidr_block
+#     cidr_block = "0.0.0.0/0"
 #     gateway_id = "local" # Change to S3 Gateway Endpoint later
 #   }
 # }
@@ -421,3 +421,4 @@ resource "aws_instance" "lab-ec2-app-private" {
   }
   depends_on = [data.aws_ami.ec2_golden_ami]
 }
+
